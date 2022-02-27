@@ -10,7 +10,7 @@ public class MyController {
 
     @GetMapping("/data")
     public ResponseEntity<String> getData() {
-        return new ResponseEntity<String>("Ashish is my name", HttpStatus.OK);
+        return new ResponseEntity<String>("Ashish is my new name", HttpStatus.OK);
     }
 
 }

@@ -18,4 +18,9 @@ public class MyController {
         return new ResponseEntity<String>("Universe Boss", HttpStatus.OK);
     }
 
+    @GetMapping("/name")
+    public ResponseEntity<String> getCollegeName() {
+        return new ResponseEntity<String>("LNCT College is best", HttpStatus.CREATED);
+    }
+
 }

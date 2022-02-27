@@ -20,7 +20,7 @@ public class MyController {
 
     @GetMapping("/name")
     public ResponseEntity<String> getCollegeName() {
-        return new ResponseEntity<String>("LNCT College is best", HttpStatus.CREATED);
+        return new ResponseEntity<String>("LNCT College is best post", HttpStatus.CREATED);
     }
 
 }

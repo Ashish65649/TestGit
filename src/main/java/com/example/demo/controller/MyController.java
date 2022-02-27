@@ -13,4 +13,9 @@ public class MyController {
         return new ResponseEntity<String>("Ashish is my new name", HttpStatus.OK);
     }
 
+    @GetMapping("/name")
+    public ResponseEntity<String> getName() {
+        return new ResponseEntity<String>("Universe Boss", HttpStatus.OK);
+    }
+
 }

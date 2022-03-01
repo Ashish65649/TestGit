@@ -7,5 +7,7 @@ public class Student {
 
     private int roll ;
     private String name ;
+    private String college ;
+    private String company ;
 
 }

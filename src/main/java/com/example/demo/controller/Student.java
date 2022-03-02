@@ -21,5 +21,6 @@ public class Student {
     private String name ;
     private String college ;
     private String company ;
+    private int id ;
 
 }

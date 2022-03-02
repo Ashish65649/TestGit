@@ -15,9 +15,8 @@ public class DemoApplication implements CommandLineRunner  {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Student student = new Student();
-		student.setName("Ashish Ranjan");
-		student.setRoll(45);
+		Student student = Student.builder().name("Apple").college("IIT Bombay").roll(45).company("Infosys").build();
+
 		System.out.println(student);
 
 	}

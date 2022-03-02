@@ -8,6 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MyController {
 
+    @GetMapping("/student")
+    public ResponseEntity<?> getStudent() {
+        Student student = new Student();
+        student.setRoll(15);
+        student.setName("Ashish Ranjan");
+        student.setCollege("LNCT");
+        student.setCompany("Walkover");
+        return new ResponseEntity<>(student, HttpStatus.OK);
+    }
+
     @GetMapping("/data")
     public ResponseEntity<String> getData() {
         return new ResponseEntity<String>("Ashish Boss test is my new name", HttpStatus.OK);
@@ -18,7 +28,7 @@ public class MyController {
         return new ResponseEntity<String>("Universe Boss", HttpStatus.OK);
     }
 
-    @GetMapping("/name")
+    @GetMapping("/collegeName")
     public ResponseEntity<String> getCollegeName() {
         return new ResponseEntity<String>("LNCT College is best post", HttpStatus.CREATED);
     }

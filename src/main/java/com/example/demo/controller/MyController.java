@@ -10,12 +10,7 @@ public class MyController {
 
     @GetMapping("/student")
     public ResponseEntity<?> getStudent() {
-        Student student = new Student();
-        student.setRoll(15);
-        student.setName("Ashish Ranjan");
-        student.setCollege("LNCT");
-        student.setCompany("Walkover");
-        return new ResponseEntity<>(student, HttpStatus.OK);
+        return null;
     }
 
     @GetMapping("/data")

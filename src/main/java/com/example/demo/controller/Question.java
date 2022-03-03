@@ -17,7 +17,7 @@ public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id ;
+    private int ques_id ;
     private String qName ;
 
     @OneToOne

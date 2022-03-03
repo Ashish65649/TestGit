@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Answer {
 
     @Id
-    private int id ;
+    private int ans_id ;
     private String my_ans ;
     private String postedBy ;
 

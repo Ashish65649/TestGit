@@ -1,18 +1,23 @@
 package com.example.demo.controller;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
-@Entity
+@Entity@Getter
 @Table(name = "answer")
+@NoArgsConstructor@AllArgsConstructor
+@Builder@Setter
 public class Answer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ans_id ;
-    private String my_ans ;
+    private int id ;
+    private String ans ;
     private String postedBy ;
+
+    @OneToOne(mappedBy = "my_answer")
+    @JsonBackReference
+    private Question question ;
 
 }

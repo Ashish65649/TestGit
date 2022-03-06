@@ -1,26 +1,23 @@
 package com.example.demo.controller;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@Builder@Getter
 @Entity
 @Table(name = "question")
+@NoArgsConstructor@AllArgsConstructor
 public class Question {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ques_id ;
     private String qName ;
 
     @OneToOne
-    private Answer answer ;
+    @JoinColumn(name = "FK_answer")    // by default reference column is the PK of referenced class
+    @JsonManagedReference
+    private Answer my_answer ;
 
 }

@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,7 +17,8 @@ public class Answer {
     private String ans ;
     private String postedBy ;
 
-    @OneToOne(mappedBy = "my_answer")
+    @ManyToOne
+    @JoinColumn(name = "FK_answer")
     @JsonBackReference
     private Question question ;
 

@@ -18,8 +18,7 @@ public class Aadhar {
     private int aadharId;
     private String userName ;
     private String aadharNo ;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pan_no", referencedColumnName = "panId")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "aadharCard")
     @JsonManagedReference
     private PAN panCard ;
 }

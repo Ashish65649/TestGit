@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,14 +54,16 @@ public class MyController {
         return new ResponseEntity<>("Your answer has been saved successfully", HttpStatus.OK);
     }
 
-    @GetMapping("/data")
-    public ResponseEntity<String> getData() {
-        return new ResponseEntity<String>("Ashish Boss test is my new name", HttpStatus.OK);
+    @GetMapping("/getAadhar")
+    public ResponseEntity<?> getAadhar() {
+        Optional<Aadhar> optional = this.aadharRepo.findById(458);
+        return new ResponseEntity<Aadhar>(optional.get(), HttpStatus.OK);
     }
 
-    @GetMapping("/name")
-    public ResponseEntity<String> getName() {
-        return new ResponseEntity<String>("Universe Boss", HttpStatus.OK);
+    @PostMapping(value = "/student", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> getStudent(@RequestBody Student student) {
+        System.out.println(student);
+        return new ResponseEntity<>(student, HttpStatus.OK);
     }
 
     @GetMapping("/collegeName")

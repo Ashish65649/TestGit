@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.example.demo.manytomany")
 public class DemoApplication implements CommandLineRunner {
 
 	@Autowired
